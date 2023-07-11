@@ -30,9 +30,10 @@ function fillReview()
     var toAuthor = books[book].author;
     var toSynopsis = books[book].synopsis;
     var toBody = books[book].review;
-    //then changes the innerHTML property of each elemtent to output the data. 
+
+     //then changes the innerHTML property of each elemtent to output the data. 
     title.innerHTML = toTitle;
-    author.innerHTML = toAuthor;
+    author.innerHTML += toAuthor; 
     synopsis.innerHTML = toSynopsis;
     body.innerHTML = toBody;
     //now we need some magic to build the image URL - images should be named to reflect the unique ID of each entry (the number at the start of the array entry)
