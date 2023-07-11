@@ -11,7 +11,7 @@ function fillReview()
 
     //some logic here to check if a paramater wasn't parsed in the URL. If it wasn't, check the length of the Books array, and randomly land on a reviw  (FIX LATER)
     if (book == null) {
-        var randomMax = books.length; // - Fix this later, for now, if unset, set book to 0
+        var randomMax = books.length;
         book = Math.floor(Math.random() * randomMax);
         
     }
@@ -44,12 +44,16 @@ function fillReview()
 
     //finally append the book title to the page <title> tag
 
-    pgTitle.innerHTML += "¦¦ " + toTitle + " by " +toAuthor;
-
-
+    pgTitle.innerHTML += "¦¦ " + toTitle + " by " + toAuthor;
 }
+//end of fillReview()
 
 
+
+//fillShelf is a function to fill the 'shelf' in index.html. It's a bit  hacky, and runs a for loop to generate a flexbox for each entry that needs to be displayed. 
+//Currently the for loop iterates base on the lenght of the books array; obviously no good if the array grows in size (as currently only 5 records). 
+// TO DO - Make for loop intelligently iterate based on @mediaqueries - 5 iterations if a desktop resolution, 3 for mobile resolutions
+//TO DO - Randomise the order that array items are displayed so that the index shelf is dynamic, and differs each time user visits
 function fillShelf() {
     var gallery = document.querySelector(".gallery-wrap");
 
